@@ -74,7 +74,7 @@ CSV_FILE = 'standardized_finatdata.csv'
 
 # --- Primary Gemini ---
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-llm_model = genai.GenerativeModel('gemini-2.0-flash')
+llm_model = genai.GenerativeModel('gemini-2.5-flash')
 
 # --- Secondary Gemini for field identification ---
 genai_field_match = genai.configure(api_key=st.secrets["SECOND_GEMINI_API_KEY"])
@@ -256,4 +256,5 @@ if user_query:
             time.sleep(0.01)
     st.session_state["messages"].append({"role": "assistant", "content": raw_answer})
     
+
 
